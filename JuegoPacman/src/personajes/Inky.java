@@ -1,5 +1,5 @@
 package personajes;
 
-public class Inky extends Fantasmas{
+public class Inky extends Fantasma{
 
 }

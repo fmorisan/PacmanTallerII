@@ -1,5 +1,5 @@
 package personajes;
 
-public class Clyde extends Fantasmas{
+public class Clyde extends Fantasma{
 
 }

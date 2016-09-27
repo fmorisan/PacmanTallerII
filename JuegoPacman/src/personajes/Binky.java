@@ -1,5 +1,5 @@
 package personajes;
 
-public class Binky extends Fantasmas{
+public class Binky extends Fantasma{
 
 }
