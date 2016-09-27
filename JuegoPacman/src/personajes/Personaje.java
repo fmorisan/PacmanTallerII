@@ -5,7 +5,7 @@ import path.Position;
 
 public abstract class Personaje {
 	
-	private Direccion direccion;
+	protected Direccion direccion;
 	// sirve como posicion inicial? podemos asignarle una en el constructor
 	private Position pos; 
 	
@@ -19,12 +19,13 @@ public abstract class Personaje {
 	
 	public Position getSiguientePosicion(){
 		//TODO agregar una forma de convertir direcciones a vectores Position para poder sumar
-		return this.pos + this.direccion; 
+		//return this.pos + this.direccion; 
+		return null;
 	}
 	
 	public void actualizarPosicion(){
 		//TODO agregar una forma de convertir direcciones a vectores Position para poder sumar
-		this.pos += this.direccion;
+		//this.pos += this.direccion;
 	}
 	
 
