@@ -2,6 +2,7 @@ package personajes;
 
 
 import estructuras.Direccion;
+import path.Position;
 
 public class Pacman extends Personaje {
 	
@@ -10,10 +11,8 @@ public class Pacman extends Personaje {
 	private int cantPasos;
 	private boolean inmunidadTemp;
 	
-	@Override
-	public void crearPersonaje() {
-		// TODO Auto-generated method stub
-		
+	public Pacman(Position posInicial){
+		super(posInicial);
 	}
 
 	

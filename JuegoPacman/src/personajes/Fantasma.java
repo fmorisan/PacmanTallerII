@@ -14,6 +14,10 @@ public abstract class Fantasma extends Personaje {
 	 private boolean exitingHome;
 	 private boolean enteringHome;
 	 
+	 protected Fantasma(Position posInicial){
+		 super(posInicial);
+	 }
+	 
 	@Override
 	public void crearPersonaje() {
 		// TODO Auto-generated method stub

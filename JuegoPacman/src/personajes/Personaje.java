@@ -9,6 +9,10 @@ public abstract class Personaje {
 	// sirve como posicion inicial? podemos asignarle una en el constructor
 	private Position pos; 
 	
+	
+	protected Personaje(Position posInicial){
+		this.pos = posInicial;
+	}
 	public Position getPosicion(){
 		return this.pos;
 	}
