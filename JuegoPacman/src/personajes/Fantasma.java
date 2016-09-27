@@ -1,13 +1,14 @@
 package personajes;
 
-public abstract class Fantasmas extends Personaje {
+import path.Position;
+
+public abstract class Fantasma extends Personaje {
 
 
 	 private static final int VELOCIDAD = 15;
 	 private static final int[] DIRECCION_REVERSA = new int[4];
 	
-	 private int posX;
-	 private int posY;
+	 private Position pos;
 
 	 private boolean inHome;
 	 private boolean exitingHome;
