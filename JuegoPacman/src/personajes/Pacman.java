@@ -6,35 +6,24 @@ import path.Position;
 
 public class Pacman extends Personaje {
 	
+	// comienza sin poderes.
+	private int pasosRestantesEmpoderado = 0;
+	// comienza sin haber comido fantasmas
+	// lo usamos para ver cuantos puntos darle a Pacman
+	private int fantasmasComidosEsteEmpoderamiento = 0;
 	
-	private int nroDeVidas;
-	private int cantPasos;
-	private boolean inmunidadTemp;
+	private int puntaje;
 	
 	public Pacman(Position posInicial){
 		super(posInicial);
 	}
-
 	
-	public int getNroDeVidas() {
-		return nroDeVidas;
+	public void cambiarDireccion(Direccion dir){
+		this.direccion = dir;
 	}
-
-	public void setNroDeVidas(int nroDeVidas) {
-		this.nroDeVidas = nroDeVidas;
-	}
-
-	public int getCantPasos() {
-		return cantPasos;
-	}
-
-	public void setCantPasos(int cantPasos) {
-		this.cantPasos = cantPasos;
-	}
-
-	public void mover(Direccion dir){
 	
-		
+	public boolean estaEmpoderado(){
+		return (this.pasosRestantesEmpoderado > 0);
 	}
 	
 }
