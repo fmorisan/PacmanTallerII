@@ -23,8 +23,7 @@ public abstract class Personaje {
 	}
 	
 	public void actualizarPosicion(){
-		//TODO agregar una forma de convertir direcciones a vectores Position para poder sumar
-		//this.pos += this.direccion;
+		this.pos = Position.add(this.pos, this.direccion.getVector());
 	}
 	
 }
