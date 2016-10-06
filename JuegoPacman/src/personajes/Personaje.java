@@ -5,7 +5,7 @@ import path.Position;
 
 public abstract class Personaje {
 	
-	protected Direccion direccion;
+	private Direccion direccion;
 	// sirve como posicion inicial? podemos asignarle una en el constructor
 	private Position pos; 
 	
