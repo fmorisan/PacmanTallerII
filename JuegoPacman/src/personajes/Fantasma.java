@@ -22,6 +22,21 @@ public abstract class Fantasma extends Personaje {
 	/*
 	 * Modifica la direccion del Fantasma debido a su estrategia
 	 */
-	public abstract void estrategia(Position posicionPacman);
-
+	public void estrategia(Position posicionPacman){
+		switch (this.modo){
+		case PERSECUCION:
+			estrategiaPersecucion(posicionPacman);
+		case ASUSTADO:
+			estrategiaAsustado(posicionPacman);
+		case DISPERSION:
+			estrategiaDispersion();
+		}
+	}
+	
+	public abstract void estrategiaPersecucion(Position posicionPacman);
+	public abstract void estrategiaAsustado(Position poscicionPacman);
+	public void estrategiaDispersion(){
+		// TODO agregar logica para que los fantasmas vayan a su esquina designada
+		// es igual para todos los fantasmas asi que vale dejarla implementada aca
+	}
 }
