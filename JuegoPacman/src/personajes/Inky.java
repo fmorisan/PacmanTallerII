@@ -7,8 +7,17 @@ public class Inky extends Fantasma{
 	public Inky(Position posInicial) {
 		super(posInicial);
 	}
-	
-	public void estrategia(Position posicionPacman){
+
+	@Override
+	public void estrategiaPersecucion(Position posicionPacman) {
+		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void estrategiaAsustado(Position poscicionPacman) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
