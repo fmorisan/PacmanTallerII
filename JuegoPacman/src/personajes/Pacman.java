@@ -13,9 +13,18 @@ public class Pacman extends Personaje {
 	private int fantasmasComidosEsteEmpoderamiento = 0;
 	private int puntaje;
 	private Direccion direccion = Direccion.QUIETO;
+	private static Pacman instancia = null;
 	
-	public Pacman(Position posInicial){
+	private Pacman(Position posInicial){
 		super(posInicial);
+	}
+	
+	public Pacman getPacman(){
+		if (this.instancia == null){
+			// TODO cambiar esto a una variable seteable en opciones
+			this.instancia = new Pacman(new Position(0, 0));
+		}
+		return this.instancia;
 	}
 	
 	public void cambiarDireccion(Direccion dir){
@@ -24,6 +33,10 @@ public class Pacman extends Personaje {
 	
 	public boolean estaEmpoderado(){
 		return (this.pasosRestantesEmpoderado > 0);
+	}
+	
+	public void actualizarPosicion(){
+		
 	}
 	
 }
