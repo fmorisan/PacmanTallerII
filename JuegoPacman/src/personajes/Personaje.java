@@ -19,16 +19,12 @@ public abstract class Personaje {
 	
 	public Position getSiguientePosicion(){
 		//TODO agregar una forma de convertir direcciones a vectores Position para poder sumar
-		//return this.pos + this.direccion; 
-		return null;
+		return Position.add(this.pos, this.direccion.getVector());
 	}
 	
 	public void actualizarPosicion(){
 		//TODO agregar una forma de convertir direcciones a vectores Position para poder sumar
 		//this.pos += this.direccion;
 	}
-	
-
-	public abstract void crearPersonaje();
 	
 }

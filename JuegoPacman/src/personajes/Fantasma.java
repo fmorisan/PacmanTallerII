@@ -1,12 +1,14 @@
 package personajes;
 
 import path.Position;
+import estructuras.Modo;
 
 public abstract class Fantasma extends Personaje {
 
 
 	 private static final int VELOCIDAD = 15;
 	 private static final int[] DIRECCION_REVERSA = new int[4];
+	 private Modo modo = Modo.PERSECUCION;
 	
 	 private Position pos;
 
@@ -17,11 +19,9 @@ public abstract class Fantasma extends Personaje {
 	 protected Fantasma(Position posInicial){
 		 super(posInicial);
 	 }
-	 
-	@Override
-	public void crearPersonaje() {
-		// TODO Auto-generated method stub
-		
-	}
+	/*
+	 * Modifica la direccion del Fantasma debido a su estrategia
+	 */
+	public abstract void estrategia();
 
 }

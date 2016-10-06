@@ -1,18 +1,24 @@
 package estructuras;
+import path.Position;
 
 public enum Direccion {
 	
 	// NORTE - SUR - OESTE - ESTE 
-	ARRIBA(1),	ABAJO(2),	DERECHA(3),  	IZQUIERDA(4);
+	ARRIBA(new Position(0, 1)),
+	ABAJO(new Position(0, -1)),
+	DERECHA(new Position(1, 0)),
+	IZQUIERDA(new Position(-1, 0)),
+	QUIETO(new Position(0, 0));
 	
-	private int direccion;
-	
-	Direccion(int i){
-		this.direccion = i;
+	private Position vector;
+	 
+	private Direccion(Position vector) {
+		this.vector = vector;
 	}
 
-	public int getDireccion() {
-		return direccion;
+	public Position getVector() {
+		return vector;
 	}
+	
 	
 }

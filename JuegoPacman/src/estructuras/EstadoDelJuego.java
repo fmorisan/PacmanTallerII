@@ -1,6 +1,7 @@
 package estructuras;
 
-public interface EstadoDelJuego {
-
-	
+public enum EstadoDelJuego {
+	JUGANDO,
+	PAUSADO,
+	FINALIZADO;
 }

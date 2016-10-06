@@ -17,5 +17,9 @@ public class Position {
 		positionX = x;
 		positionY = y;
 	}
+	
+	public static Position add(Position a, Position b){
+		return new Position(a.getX()+b.getX(), a.getY()+b.getY());
+	}
 
 }
