@@ -13,7 +13,7 @@ public class Pacman extends Personaje {
 	private int fantasmasComidosEsteEmpoderamiento = 0;
 	private int puntaje;
 	private Direccion direccion = Direccion.QUIETO;
-	private static Pacman instancia = null;
+	private Pacman instancia = null;
 	
 	private Pacman(Position posInicial){
 		super(posInicial);
