@@ -22,6 +22,6 @@ public abstract class Fantasma extends Personaje {
 	/*
 	 * Modifica la direccion del Fantasma debido a su estrategia
 	 */
-	public abstract void estrategia();
+	public abstract void estrategia(Position posicionPacman);
 
 }
