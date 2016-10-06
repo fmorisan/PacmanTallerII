@@ -8,7 +8,7 @@ public class Blinky extends Fantasma{
 		super(posInicial);
 	}
 	
-	public void estrategia(){
+	public void estrategia(Position posicionPacman){
 		
 	}
 }
