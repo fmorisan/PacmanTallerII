@@ -20,5 +20,17 @@ public enum Direccion {
 		return vector;
 	}
 	
+	public static Direccion fromVector(Position vector) {
+		if (vector.getX() > 0){
+			return Direccion.DERECHA;
+		} else if (vector.getX() < 0) {
+			return Direccion.IZQUIERDA;
+		} else if (vector.getY() > 0) {
+			return Direccion.ARRIBA;
+		} else {
+			return Direccion.ABAJO;
+		}
+	}
+	
 	
 }
