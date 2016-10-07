@@ -1,6 +1,5 @@
 package personajes;
 
-import path.Path;
 import path.Path.Step;
 import path.PathFinder;
 import path.Position;
@@ -12,6 +11,7 @@ public abstract class Fantasma extends Personaje {
 	 private Modo modo = Modo.PERSECUCION;
 	 
 	 protected Position esquinaDesignada;
+	 protected Position esquinaAsustado;
 
 	 //private boolean inHome;
 	 //private boolean exitingHome;
@@ -34,16 +34,30 @@ public abstract class Fantasma extends Personaje {
 		}
 	}
 	
+	public void setModo(Modo modo){
+		if (modo == Modo.ASUSTADO){
+			//TODO cambiar por un valor aleatorio
+			this.esquinaAsustado = new Position(0, 0);
+		} else {
+			this.esquinaAsustado = null;
+		}
+		this.modo = modo;
+	}
+	
 	public abstract void estrategiaPersecucion(Position posicionPacman);
-	public abstract void estrategiaAsustado(Position poscicionPacman);
+	
 	public void estrategiaDispersion(){
-		// TODO agregar logica para que los fantasmas vayan a su esquina designada
-		// es igual para todos los fantasmas asi que vale dejarla implementada aca
 		Step siguientePaso = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), this.esquinaDesignada.getX(), this.esquinaDesignada.getY()).getStep(0);
 		int dx, dy;
 		dx = siguientePaso.getX() - this.getPosicion().getX();
 		dy = siguientePaso.getY() - this.getPosicion().getY();
 		
 		this.setDireccion(Direccion.fromVector(new Position(dx, dy)));
+	}
+	
+	public void estrategiaAsustado(Position poscicionPacman) {
+		// TODO Auto-generated method stub
+		Step siguientePaso = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), this.esquinaAsustado.getX(), this.esquinaAsustado.getY()).getStep(0);
+		this.setDireccion(Direccion.fromVector(new Position(siguientePaso.getX() - this.getPosicion().getX(), siguientePaso.getY() - this.getPosicion().getY())));
 	}
 }
