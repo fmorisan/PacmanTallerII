@@ -17,6 +17,10 @@ public abstract class Personaje {
 		return this.pos;
 	}
 	
+	protected void setDireccion(Direccion dir){
+		this.direccion = dir;
+	}
+	
 	public Position getSiguientePosicion(){
 		//TODO agregar una forma de convertir direcciones a vectores Position para poder sumar
 		return Position.add(this.pos, this.direccion.getVector());
