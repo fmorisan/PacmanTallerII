@@ -1,6 +1,7 @@
 package personajes;
 
 
+import config.Config;
 import estructuras.Direccion;
 import path.Position;
 
@@ -22,7 +23,7 @@ public class Pacman extends Personaje {
 	public static Pacman getPacman(){
 		if (instancia == null){
 			// TODO cambiar esto a una variable seteable en opciones
-			instancia = new Pacman(new Position(0, 0));
+			instancia = new Pacman(Config.PACMAN_START);
 		}
 		return instancia;
 	}
