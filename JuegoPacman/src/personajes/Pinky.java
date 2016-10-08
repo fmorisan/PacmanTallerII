@@ -5,10 +5,22 @@ import path.Path.Step;
 import path.PathFinder;
 import path.Position;
 
+/**
+ * Clase que representa al fantasma rosa, Pinky. 
+ * @author mori
+ *
+ */
 public class Pinky extends Fantasma{
-	
+	/**
+	 * Guarda la posicion de Pacman en el turno anterior.
+	 */
 	private Position posicionAnteriorPacman = null;
 	
+	/**
+	 * Constructor
+	 * @param posInicial
+	 * 		Posicion inicial
+	 */
 	public Pinky(Position posInicial){
 		super(posInicial);
 	}

@@ -4,9 +4,17 @@ import estructuras.Direccion;
 import path.Path.Step;
 import path.PathFinder;
 import path.Position;
-
+/**
+ * Clase que representa al fantasma rojo, Blinky
+ * @author mori
+ *
+ */
 public class Blinky extends Fantasma{
-	
+	/**
+	 * Constructor
+	 * @param posInicial
+	 * 		Posicion inicial
+	 */
 	public Blinky(Position posInicial){
 		super(posInicial);
 		// TODO cambiar por un valor seteable en opciones

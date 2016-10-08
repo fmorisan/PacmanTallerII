@@ -5,14 +5,19 @@ import path.Position;
 import estructuras.Direccion;
 import path.Path.Step;
 
+/**
+ * Clase que representa al fantasma naranja, Clyde
+ * @author mori
+ *
+ */
 public class Clyde extends Fantasma{
-	
+	/**
+	 * Constructor
+	 * @param posInicial
+	 * 		Posicion inicial
+	 */
 	public Clyde(Position posInicial){
 		super(posInicial);
-	}
-	
-	public void estrategia(Position posicionPacman){
-		
 	}
 
 	@Override

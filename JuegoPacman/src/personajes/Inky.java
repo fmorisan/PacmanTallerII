@@ -1,13 +1,27 @@
 package personajes;
 
 import estructuras.Direccion;
+
 import path.Path.Step;
 import path.PathFinder;
 import path.Position;
 
+/**
+ * Clase que representa al fantasma azul, Inky
+ * @author mori
+ *
+ */
 public class Inky extends Fantasma{
+	/**
+	 * Guarda la posicion de Pacman en el turno anterior.
+	 */
 	private Position posicionAnteriorPacman = null;
 	
+	/**
+	 * Constructor
+	 * @param posInicial
+	 * 		Posicion inicial
+	 */
 	public Inky(Position posInicial) {
 		super(posInicial);
 	}
@@ -30,8 +44,8 @@ public class Inky extends Fantasma{
 					);
 			
 			Position target = new Position(
-					this.getPosicion().getX()+2*P1.getX(),
-					this.getPosicion().getY()+2*P1.getY()
+					this.getPosicion().getX()+2*vectorDesplazamiento.getX(),
+					this.getPosicion().getY()+2*vectorDesplazamiento.getY()
 					);
 			Step proximoPaso = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), target.getX(), target.getY()).getStep(0);
 			
