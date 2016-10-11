@@ -3,6 +3,8 @@ package personajes;
 
 import config.Config;
 import estructuras.Direccion;
+import objetos.BolaDePoder;
+import objetos.Comida;
 import path.Position;
 
 public class Pacman extends Personaje {
@@ -20,6 +22,10 @@ public class Pacman extends Personaje {
 	 * Puntaje
 	 */
 	private int puntaje;
+	public int getPuntaje() {
+		return puntaje;
+	}
+
 	private Direccion direccion = Direccion.QUIETO;
 	
 	/**
@@ -66,6 +72,17 @@ public class Pacman extends Personaje {
 		super.actualizarPosicion();
 		if (this.pasosRestantesEmpoderado > 0)
 			this.pasosRestantesEmpoderado--;
+	}
+	
+	public void setDireccion(Direccion dir){
+		super.setDireccion(dir);
+	}
+	
+	public void comer(Comida comida){
+		if (comida instanceof BolaDePoder){
+			this.pasosRestantesEmpoderado = 20;
+		}
+		this.puntaje += comida.comer();
 	}
 	
 }

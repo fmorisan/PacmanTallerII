@@ -2,6 +2,7 @@ package personajes;
 
 import path.PathFinder;
 import path.Position;
+import config.Config;
 import estructuras.Direccion;
 import path.Path.Step;
 
@@ -11,6 +12,12 @@ import path.Path.Step;
  *
  */
 public class Clyde extends Fantasma{
+	private String name = "Clyde";
+	
+	public String getName() {
+		return name;
+	}
+
 	/**
 	 * Constructor
 	 * @param posInicial
@@ -18,6 +25,7 @@ public class Clyde extends Fantasma{
 	 */
 	public Clyde(Position posInicial){
 		super(posInicial);
+		this.esquinaDesignada = Config.CLYDE_CORNER;
 	}
 
 	@Override

@@ -11,11 +11,22 @@ public final class Config {
 	/**
 	 * Posiciones iniciales
 	 */
-	public static final Position PACMAN_START = new Position(20, 13);
-	public static final Position INKY_START = new Position(11,	11);
-	public static final Position PINKY_START = new Position(11, 13);
-	public static final Position BLINKY_START = new Position(8, 13);
-	public static final Position CLYDE_START =  new Position(11, 15);
+	public static final Position PACMAN_START = new Position(23, 14);
+	public static final Position INKY_START = new Position(8, 1);
+	public static final Position PINKY_START = new Position(8, 1);
+	public static final Position BLINKY_START = new Position(8, 27);
+	public static final Position CLYDE_START =  new Position(8, 27);
+	public static final Position[] POWERBALL_POSITIONS = {
+		new Position(1, 1),
+		new Position(1, 27),
+		new Position(23, 1),
+		new Position(23, 27)
+	};
+	
+	public static final Position INKY_CORNER = new Position(1, 1);
+	public static final Position PINKY_CORNER = new Position(1, 27);
+	public static final Position BLINKY_CORNER = new Position(29, 27);
+	public static final Position CLYDE_CORNER = new Position(29, 1);
 	
 	/**
 	 * Velocidades

@@ -1,5 +1,6 @@
 package personajes;
 
+import config.Config;
 import estructuras.Direccion;
 
 import path.Path.Step;
@@ -17,6 +18,12 @@ public class Inky extends Fantasma{
 	 */
 	private Position posicionAnteriorPacman = null;
 	
+	private String name = "Inky";
+	
+	public String getName() {
+		return name;
+	}
+
 	/**
 	 * Constructor
 	 * @param posInicial
@@ -24,6 +31,7 @@ public class Inky extends Fantasma{
 	 */
 	public Inky(Position posInicial) {
 		super(posInicial);
+		this.esquinaDesignada = Config.INKY_CORNER;
 	}
 
 	@Override

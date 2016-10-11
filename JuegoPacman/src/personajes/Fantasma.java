@@ -17,6 +17,12 @@ public abstract class Fantasma extends Personaje {
 	 * Modo actual del fantasma
 	 */
 	 private Modo modo = Modo.PERSECUCION;
+	 
+	 public Modo getModo() {
+		return modo;
+	}
+
+	public abstract String getName();
 	/**
 	 * Variables de instancia 
 	 */
@@ -96,7 +102,9 @@ public abstract class Fantasma extends Personaje {
 	  * 
 	  */
 	public void estrategiaAsustado() {
-		Step siguientePaso = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), this.esquinaAsustado.getX(), this.esquinaAsustado.getY()).getStep(0);
-		this.setDireccion(Direccion.fromVector(new Position(siguientePaso.getX() - this.getPosicion().getX(), siguientePaso.getY() - this.getPosicion().getY())));
+		if (this.esquinaAsustado != null){
+			Step siguientePaso = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), this.esquinaAsustado.getX(), this.esquinaAsustado.getY()).getStep(0);
+			this.setDireccion(Direccion.fromVector(new Position(siguientePaso.getX() - this.getPosicion().getX(), siguientePaso.getY() - this.getPosicion().getY())));
+		}
 	}
 }

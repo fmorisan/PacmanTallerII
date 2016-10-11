@@ -1,5 +1,6 @@
 package personajes;
 
+import config.Config;
 import estructuras.Direccion;
 import path.Path.Step;
 import path.PathFinder;
@@ -11,6 +12,12 @@ import path.Position;
  *
  */
 public class Pinky extends Fantasma{
+	private String name = "Pinky";
+	
+	public String getName() {
+		return name;
+	}
+
 	/**
 	 * Guarda la posicion de Pacman en el turno anterior.
 	 */
@@ -23,6 +30,7 @@ public class Pinky extends Fantasma{
 	 */
 	public Pinky(Position posInicial){
 		super(posInicial);
+		this.esquinaDesignada = Config.PINKY_CORNER;
 	}
 
 	@Override
