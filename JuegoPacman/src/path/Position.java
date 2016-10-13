@@ -25,5 +25,14 @@ public class Position {
 	public String toString(){
 		return "("+this.getX()+","+this.getY()+")";
 	}
+	
+	public boolean equals(Object o){
+		if (o instanceof Position){
+			Position otro = (Position) o;
+			return this.getX() == otro.getX() && this.getY() == otro.getY();
+		} else {
+			return false;
+		}
+	}
 
 }

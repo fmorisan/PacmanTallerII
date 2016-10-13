@@ -30,9 +30,8 @@ public class Blinky extends Fantasma{
 
 	@Override
 	public void estrategiaPersecucion(Position posicionPacman) {
-		// TODO Auto-generated method stub
 		Path path = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), posicionPacman.getX(), posicionPacman.getY());
-		Step siguientePaso = path.getStep(0);
+		Step siguientePaso = path.getStep(1);
 		this.setDireccion(Direccion.fromVector(new Position(siguientePaso.getX() - this.getPosicion().getX(), siguientePaso.getY() - this.getPosicion().getY())));
 	}
 	

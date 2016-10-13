@@ -45,7 +45,7 @@ public class Pinky extends Fantasma{
 			);
 			if (path == null)
 				return;
-			Step siguientePaso = path.getStep(0);
+			Step siguientePaso = path.getStep(1);
 			
 			this.setDireccion(
 				Direccion.fromVector(new Position(

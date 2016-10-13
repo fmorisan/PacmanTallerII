@@ -55,7 +55,8 @@ public class Inky extends Fantasma{
 					this.getPosicion().getX()+2*vectorDesplazamiento.getX(),
 					this.getPosicion().getY()+2*vectorDesplazamiento.getY()
 					);
-			Step proximoPaso = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), target.getX(), target.getY()).getStep(0);
+			
+			Step proximoPaso = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), target.getX(), target.getY()).getStep(1);
 			
 			this.setDireccion(Direccion.fromVector(
 					new Position(

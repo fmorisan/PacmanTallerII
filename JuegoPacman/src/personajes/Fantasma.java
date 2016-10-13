@@ -127,7 +127,7 @@ public abstract class Fantasma extends Personaje {
 	 */
 	public void estrategiaDispersion(){
 		Path path = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), this.esquinaDesignada.getX(), this.esquinaDesignada.getY());
-		Step siguientePaso = path.getStep(0);
+		Step siguientePaso = path.getStep(1);
 		int dx, dy;
 		dx = siguientePaso.getX() - this.getPosicion().getX();
 		dy = siguientePaso.getY() - this.getPosicion().getY();
@@ -141,7 +141,7 @@ public abstract class Fantasma extends Personaje {
 	public void estrategiaAsustado() {
 		if (this.esquinaAsustado != null){
 			Path path = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), this.esquinaAsustado.getX(), this.esquinaAsustado.getY());
-			Step siguientePaso = path.getStep(0);
+			Step siguientePaso = path.getStep(1);
 			this.setDireccion(Direccion.fromVector(new Position(siguientePaso.getX() - this.getPosicion().getX(), siguientePaso.getY() - this.getPosicion().getY())));
 		}
 	}

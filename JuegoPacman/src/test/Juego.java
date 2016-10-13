@@ -31,7 +31,7 @@ public class Juego {
 		System.out.println("Inicia el juego!");
 		while (true) {
 			simularTurno();
-			if (pacman.getPosicion().equals(new Position(1, 1))){
+			if (pacman.getPosicion().equals(new Position(23, 1))){
 				break;
 			}
 		}
@@ -40,8 +40,8 @@ public class Juego {
 	}
 	
 	private static void simularTurno(){
-		path.Path pacmanPath = PathFinder.findPath(pacman.getPosicion().getX(), pacman.getPosicion().getY(), 1, 1);
-		path.Path.Step nextStep = pacmanPath.getStep(0);
+		path.Path pacmanPath = PathFinder.findPath(pacman.getPosicion().getX(), pacman.getPosicion().getY(), 23, 1);
+		path.Path.Step nextStep = pacmanPath.getStep(1);
 		Position vectorMovimiento = new Position(nextStep.getX() - pacman.getPosicion().getX(), nextStep.getY() - pacman.getPosicion().getY());
 		pacman.setDireccion(Direccion.fromVector(vectorMovimiento));
 		if (mapaJuego.getMap().canMove(pacman.getSiguientePosicion().getX(), pacman.getSiguientePosicion().getY())){

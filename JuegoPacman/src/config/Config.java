@@ -12,10 +12,10 @@ public final class Config {
 	 * Posiciones iniciales
 	 */
 	public static final Position PACMAN_START = new Position(23, 14);
-	public static final Position INKY_START = new Position(26, 1);
-	public static final Position PINKY_START = new Position(1, 1);
-	public static final Position BLINKY_START = new Position(29, 1);
-	public static final Position CLYDE_START =  new Position(29, 26);
+	public static final Position INKY_START = new Position(11, 10);
+	public static final Position PINKY_START = new Position(11, 12);
+	public static final Position BLINKY_START = new Position(11, 14);
+	public static final Position CLYDE_START =  new Position(11, 16);
 	public static final Position[] POWERBALL_POSITIONS = {
 		new Position(1, 1),
 		new Position(1, 26),

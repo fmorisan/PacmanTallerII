@@ -34,7 +34,7 @@ public class Clyde extends Fantasma{
 		int distanciaAPacman = Math.abs(this.getPosicion().getX() - posicionPacman.getX()) + Math.abs(this.getPosicion().getY() - posicionPacman.getY());
 		
 		if (distanciaAPacman > 8){
-			Step proximoPaso = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), posicionPacman.getX(), posicionPacman.getY()).getStep(0);
+			Step proximoPaso = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), posicionPacman.getX(), posicionPacman.getY()).getStep(1);
 			this.setDireccion(Direccion.fromVector(
 					new Position(
 							proximoPaso.getX() - this.getPosicion().getX(),
