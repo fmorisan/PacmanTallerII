@@ -49,7 +49,6 @@ public class Pacman extends Personaje {
 	 */
 	public static Pacman getPacman(){
 		if (instancia == null){
-			// TODO cambiar esto a una variable seteable en opciones
 			instancia = new Pacman(Config.PACMAN_START);
 		}
 		return instancia;
@@ -78,11 +77,18 @@ public class Pacman extends Personaje {
 		super.setDireccion(dir);
 	}
 	
+	/**
+	 * Hace que PacMan coma ua instancia de comida.
+	 * @param comida
+	 * 		Comida Objeto comible por PacMan.
+	 */
 	public void comer(Comida comida){
-		if (comida instanceof BolaDePoder){
-			this.pasosRestantesEmpoderado = 20;
+		if (comida != null){
+			if (comida instanceof BolaDePoder){
+				this.pasosRestantesEmpoderado = 20;
+			}
+			this.puntaje += comida.comer();
 		}
-		this.puntaje += comida.comer();
 	}
 	
 }
