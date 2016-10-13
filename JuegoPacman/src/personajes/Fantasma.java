@@ -5,6 +5,9 @@ import path.Path.Step;
 
 import path.PathFinder;
 import path.Position;
+
+import java.util.Random;
+
 import config.Config;
 import estructuras.Direccion;
 import estructuras.Modo;
@@ -70,11 +73,43 @@ public abstract class Fantasma extends Personaje {
 	public void setModo(Modo modo){
 		if (modo == Modo.ASUSTADO){
 			//TODO cambiar por un valor aleatorio
-			this.esquinaAsustado = new Position(0, 0);
+			this.esquinaAsustado = posEsquinaAsustado();
 		} else {
 			this.esquinaAsustado = null;
 		}
 		this.modo = modo;
+	}
+	
+	/**
+	 * Método que calcula un valor random
+	 * @param valor 
+	 * 	@return value </br>
+	 * 			Valor random de tipo entero.
+	 * */
+	private int nroRandom(int valor){
+		Random md = new Random();
+		int value = (int) (md.nextDouble() * valor + 0);
+		return value;
+	}
+	
+	/**
+	 * Retorna una posicion aleatoria para la estrategia en modo asustado.
+	 * @return posEsquinaAsustado </br>
+	 * 			Posicion a la cual se dirigirá el fantasma.
+	 */
+	private Position posEsquinaAsustado (){
+		//Fila
+		int fila = nroRandom(31);
+		while ((fila != 1) || (fila != 29))  {
+			fila = nroRandom(31);
+		}
+		
+		int columna = nroRandom(28);
+		while ((columna != 1) || (columna != 26)) {
+			columna = nroRandom(28);
+		}
+		
+		return (new Position(fila,columna));
 	}
 	
 	/**
