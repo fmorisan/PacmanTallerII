@@ -12,7 +12,7 @@ public abstract class Personaje {
 	/**
 	 * Direccion actual del personaje
 	 */
-	private Direccion direccion;
+	private Direccion direccion = Direccion.QUIETO;
 	/**
 	 * Posicion actual del personaje
 	 */

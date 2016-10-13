@@ -1,6 +1,9 @@
 package test;
 
+import java.awt.List;
 import java.util.ArrayList;
+
+import org.xsmalldeadguyx.astar.Node;
 
 import config.Config;
 import estructuras.Direccion;
@@ -28,7 +31,7 @@ public class Juego {
 		System.out.println("Inicia el juego!");
 		while (true) {
 			simularTurno();
-			if (pacman.getPosicion().equals(new Position(1, 23))){
+			if (pacman.getPosicion().equals(new Position(1, 1))){
 				break;
 			}
 		}
@@ -37,18 +40,7 @@ public class Juego {
 	}
 	
 	private static void simularTurno(){
-		path.Path pacmanPath = PathFinder.findPath(pacman.getPosicion().getX(), pacman.getPosicion().getY(), 1, 23);
-		for (Fantasma f : fantasmas){
-			if (pacman.estaEmpoderado()){
-				f.setModo(Modo.ASUSTADO);
-				System.out.println(f.getName() + " esta asustado!");
-			}
-			f.estrategia(pacman.getPosicion());
-			if (mapaJuego.getMap().canMove(f.getSiguientePosicion().getX(), f.getSiguientePosicion().getY())){
-				f.actualizarPosicion();
-				System.out.println(f.getName() + " se movio a " + f.getPosicion().toString());
-			}
-		}
+		path.Path pacmanPath = PathFinder.findPath(pacman.getPosicion().getX(), pacman.getPosicion().getY(), 1, 1);
 		path.Path.Step nextStep = pacmanPath.getStep(0);
 		Position vectorMovimiento = new Position(nextStep.getX() - pacman.getPosicion().getX(), nextStep.getY() - pacman.getPosicion().getY());
 		pacman.setDireccion(Direccion.fromVector(vectorMovimiento));
@@ -58,6 +50,19 @@ public class Juego {
 			pacman.comer(mapaJuego.comer(pacman.getPosicion()));
 		}
 		
-		
+		for (Fantasma f : fantasmas){
+			
+			if (pacman.estaEmpoderado()){
+				f.setModo(Modo.ASUSTADO);
+				System.out.println(f.getName() + " esta asustado!");
+			} else {
+				f.setModo(Modo.PERSECUCION);
+			}
+			f.estrategia(pacman.getPosicion());
+			if (mapaJuego.getMap().canMove(f.getSiguientePosicion().getX(), f.getSiguientePosicion().getY())){
+				f.actualizarPosicion();
+				System.out.println(f.getName() + " se movio a " + f.getPosicion().toString());
+			}
+		}
 	}
 }

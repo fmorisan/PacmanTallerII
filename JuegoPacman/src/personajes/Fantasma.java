@@ -1,9 +1,11 @@
 package personajes;
 
+import path.Path;
 import path.Path.Step;
 
 import path.PathFinder;
 import path.Position;
+import config.Config;
 import estructuras.Direccion;
 import estructuras.Modo;
 
@@ -26,12 +28,8 @@ public abstract class Fantasma extends Personaje {
 	/**
 	 * Variables de instancia 
 	 */
-	 protected Position esquinaDesignada;
+	 protected Position esquinaDesignada = Config.BLINKY_CORNER;
 	 protected Position esquinaAsustado;
-
-	 //private boolean inHome;
-	 //private boolean exitingHome;
-	 //private boolean enteringHome;
 	 
 	 /**
 	  * Metodo constructor
@@ -52,10 +50,13 @@ public abstract class Fantasma extends Personaje {
 		switch (this.modo){
 		case PERSECUCION:
 			estrategiaPersecucion(posicionPacman);
+			break;
 		case ASUSTADO:
 			estrategiaAsustado();
+			break;
 		case DISPERSION:
 			estrategiaDispersion();
+			break;
 		}
 	}
 	
@@ -90,7 +91,8 @@ public abstract class Fantasma extends Personaje {
 	 * 
 	 */
 	public void estrategiaDispersion(){
-		Step siguientePaso = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), this.esquinaDesignada.getX(), this.esquinaDesignada.getY()).getStep(0);
+		Path path = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), this.esquinaDesignada.getX(), this.esquinaDesignada.getY());
+		Step siguientePaso = path.getStep(0);
 		int dx, dy;
 		dx = siguientePaso.getX() - this.getPosicion().getX();
 		dy = siguientePaso.getY() - this.getPosicion().getY();
@@ -103,7 +105,8 @@ public abstract class Fantasma extends Personaje {
 	  */
 	public void estrategiaAsustado() {
 		if (this.esquinaAsustado != null){
-			Step siguientePaso = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), this.esquinaAsustado.getX(), this.esquinaAsustado.getY()).getStep(0);
+			Path path = PathFinder.findPath(this.getPosicion().getX(), this.getPosicion().getY(), this.esquinaAsustado.getX(), this.esquinaAsustado.getY());
+			Step siguientePaso = path.getStep(0);
 			this.setDireccion(Direccion.fromVector(new Position(siguientePaso.getX() - this.getPosicion().getX(), siguientePaso.getY() - this.getPosicion().getY())));
 		}
 	}

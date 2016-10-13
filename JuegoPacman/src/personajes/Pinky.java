@@ -2,6 +2,7 @@ package personajes;
 
 import config.Config;
 import estructuras.Direccion;
+import path.Path;
 import path.Path.Step;
 import path.PathFinder;
 import path.Position;
@@ -38,10 +39,13 @@ public class Pinky extends Fantasma{
 		// TODO Auto-generated method stub
 		if (posicionAnteriorPacman != null){
 			Position vectorPacman = new Position(posicionPacman.getX() - posicionAnteriorPacman.getX(), posicionPacman.getY() - posicionAnteriorPacman.getY());
-			Step siguientePaso = PathFinder.findPath(
+			Path path = PathFinder.findPath(
 				this.getPosicion().getX(), posicionPacman.getX()+4*vectorPacman.getX(),
 				this.getPosicion().getY(), posicionPacman.getY()+4*vectorPacman.getY()
-			).getStep(0);
+			);
+			if (path == null)
+				return;
+			Step siguientePaso = path.getStep(0);
 			
 			this.setDireccion(
 				Direccion.fromVector(new Position(
